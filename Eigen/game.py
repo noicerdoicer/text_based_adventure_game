@@ -1,8 +1,16 @@
 import sys
 import os
 
+
+
+# Constant Variables
+
+# Door Colors
 DOOR_ONE = "red"
 DOOR_TWO = "blue"
+
+# Enemies
+ENEMY_RED_DOOR = "a red Dragon"
 
 
 def main():
@@ -13,10 +21,11 @@ def main():
     start_adventure()
 
 
+##### ROOMS #####
 def red_door_room():
     print(f'You have picked the {DOOR_ONE} Door.')
-    enemy_red_door = "a red Dragon "
-    print(f'There you see {enemy_red_door}.')
+
+    print(f'There you see {ENEMY_RED_DOOR}.')
     print("It stares at you through one narrowed eye.")
     print("Do you flee for your life or stay?")
 
@@ -27,10 +36,17 @@ def red_door_room():
         os.system('cls')  # Clears the console
         start_adventure()
     else:
+        print("It eats you. Well, that was tasty!")
+
         print("Game over")
+        # Opens soundfile in windows audioplayer
+        #os.system("start C:\\Users\\Simon\\Documents\\GitHub\\text_based_adventure_game\\Sounds\\Peter.mp3")
         print("Game will be closed.")
-        os.system('cls')  # Clears the console
+        os.system('cls')  # Clears the consolePeter
         sys.exit()
+
+
+### END ROOMS ###
 
 
 def blue_door_room():
@@ -40,7 +56,7 @@ def blue_door_room():
 
 def start_adventure():
     print(
-        f'There are two doors. One is {DOOR_ONE} [1], the other is {DOOR_TWO} [2]')
+            f'There are two doors. One is {DOOR_ONE} [1], the other is {DOOR_TWO} [2]')
     door_pick = int(input("Which door (Color) do you want to pick ? >"))
 
     if door_pick == 1:
